@@ -17,4 +17,8 @@ export class PillowService {
   getPillowsList(): Observable<Pillow[]> {
     return this.http.get<Pillow[]>(this.baseUrl);
   }
+
+  getPillow(id: string): Observable<Pillow> {
+    return this.http.get<Pillow>(`${this.baseUrl}/${id}`);
+  }
 }

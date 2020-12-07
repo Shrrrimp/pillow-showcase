@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { Pillow } from '../models/pillow.model';
 import { environment } from 'src/environments/environment';
 
@@ -14,7 +15,7 @@ export class PillowComponent implements OnInit {
   public baseUrl = environment.apiUrl;
   public imgUrl: String;
 
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit(): void {
     this.isDscrVisible = false;
@@ -23,6 +24,10 @@ export class PillowComponent implements OnInit {
 
   toggleDescription(bool): void {
     this.isDscrVisible = bool;
+  }
+
+  public goToDetailedPage(): void {
+    this.router.navigate(['detail', this.pillow.id]);
   }
 
 }

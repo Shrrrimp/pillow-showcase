@@ -6,11 +6,12 @@ import { PillowComponent } from './pillow/pillow.component';
 import { PillowListComponent } from './pillow-list/pillow-list.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FooterComponent } from './footer/footer.component';
+import { DetailsComponent } from './pages/details/details.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, PillowComponent, PillowListComponent, MainPageComponent, FooterComponent],
+  declarations: [HeaderComponent, PillowComponent, PillowListComponent, MainPageComponent, FooterComponent, DetailsComponent],
   imports: [
     CommonModule,
     CoreRoutingModule

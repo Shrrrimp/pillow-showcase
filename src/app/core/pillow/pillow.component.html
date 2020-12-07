@@ -1,6 +1,6 @@
 <div class="item">
     <div class="image">
-        <img src="{{ imgUrl }}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)">
+        <img src="{{ imgUrl }}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)" (click)="goToDetailedPage()">
         <div class="description" id="description" [ngClass]="{'description-hover': isDscrVisible}">
             <p>{{ pillow.description }}</p>
         </div>

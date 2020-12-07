@@ -7,7 +7,7 @@
     </div>
     <div class="title">
         <h4>
-            <a href="#" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)">{{ pillow.pillowName }}</a>
+            <a href="/detail/{{ pillow.id }}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)">{{ pillow.pillowName }}</a>
         </h4>
         <p class="price">${{ pillow.price }}</p>
     </div>

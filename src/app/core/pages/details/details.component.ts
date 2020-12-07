@@ -23,8 +23,6 @@ export class DetailsComponent implements OnInit {
     this.route.params.subscribe((params) => { id = params.id; });
 
     this.pillowService.getPillow(id).subscribe((data) => {
-      console.log('data:');
-      console.log(data);
       this.pillow = data;
       this.imgUrl = this.baseUrl + '/img/' + this.pillow.fileName;
       //TODO добавить переход на страницу ошибки, если объекта нет

@@ -9,6 +9,7 @@ const routes: Routes = [
     loadChildren: () => import('./core/core.module').then(m => m.CoreModule),
   },
   { path: 'detail/:id', component: DetailsComponent },
+  { path: 'login', loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule) },
 ];
 
 @NgModule({

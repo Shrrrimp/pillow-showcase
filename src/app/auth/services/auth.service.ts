@@ -20,6 +20,7 @@ export class AuthService {
       .pipe(map(data => {
         if (data) {
           localStorage.setItem('token', JSON.stringify(data));
+          this.token = data;
         }
         return data;
       }));

@@ -31,8 +31,7 @@ export class LoginPageComponent implements OnInit {
     if (!this.form.valid) { return; }
 
     this.authService.logIn(this.login.value, this.password.value).subscribe((data) => {
-      // this.router.navigate(['/home']);
-      console.log('yep!');
+      this.router.navigate(['/admin']);
     }, (err) => {
       this.isDataInvalid = true;
     });

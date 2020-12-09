@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: '/api/products',
+  loginUrl: '/api/login'
 };
 
 /*

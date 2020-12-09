@@ -1,1 +1,23 @@
-<p>login-page works!</p>
+<div class="login-form">
+    <form (ngSubmit)="submit()" [formGroup]="form">
+        <h2>Log in</h2>
+        <div *ngIf="isDataInvalid" class="wrong-data">
+            Wrong email or password!
+        </div>
+
+        <label>
+            <div class="titles">
+                <p>Email</p>
+            </div>
+            <input [ngClass]="{required: submitted && login.errors}" type="text" formControlName="login" required>
+        </label>
+        <label>
+            <div  class="titles">
+                <p>Password</p> 
+            </div>
+            <input [ngClass]="{required: submitted && password.errors}" type="password" formControlName="password" required>
+        </label>
+
+        <button class="login-btn" type="submit">Login</button>
+    </form>
+</div>

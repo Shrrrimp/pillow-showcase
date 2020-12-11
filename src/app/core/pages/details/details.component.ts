@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PillowService } from '../../services/pillow.service';
-import { Pillow } from '../../models/pillow.model';
+import { PillowService } from 'src/app/shared/services/pillow.service';
+import { Pillow } from 'src/app/shared/models/pillow.model';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
 

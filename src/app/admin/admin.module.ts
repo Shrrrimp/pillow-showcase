@@ -5,6 +5,10 @@ import { AdminRoutingModule } from '../admin/admin-routing.module';
 import { AdminHeaderComponent } from './admin-header/admin-header.component';
 import { AdminListComponent } from './admin-list/admin-list.component';
 import { AdminItemComponent } from './admin-item/admin-item.component';
+import { CoreModule } from 'src/app/core/core.module';
+// import { PillowComponent } from 'src/app/shared/pillow/pillow.component';
+// import { PillowListComponent } from 'src/app/shared/pillow-list/pillow-list.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -12,6 +16,8 @@ import { AdminItemComponent } from './admin-item/admin-item.component';
   declarations: [AdminMainComponent, AdminHeaderComponent, AdminListComponent, AdminItemComponent],
   imports: [
     CommonModule,
+    // CoreModule,
+    SharedModule,
     AdminRoutingModule
   ]
 })

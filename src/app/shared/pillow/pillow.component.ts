@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { Pillow } from '../models/pillow.model';
+import { Pillow } from 'src/app/shared/models/pillow.model';
 import { environment } from 'src/environments/environment';
 
 @Component({

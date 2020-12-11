@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PillowService } from 'src/app/core/services/pillow.service';
-import { Pillow } from 'src/app/core/models/pillow.model';
+import { PillowService } from 'src/app/shared/services/pillow.service';
+import { Pillow } from 'src/app/shared/models/pillow.model';
 
 @Component({
   selector: 'app-admin-list',

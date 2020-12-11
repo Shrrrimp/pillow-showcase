@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Pillow } from '../models/pillow.model';
+import { Pillow } from 'src/app/shared/models/pillow.model';
 
 @Injectable({
   providedIn: 'root'

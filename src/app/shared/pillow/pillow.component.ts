@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pillow } from 'src/app/shared/models/pillow.model';
 import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-pillow',
@@ -15,7 +16,7 @@ export class PillowComponent implements OnInit {
   public baseUrl = environment.apiUrl;
   public imgUrl: String;
 
-  constructor(public router: Router) { }
+  constructor(public router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.isDscrVisible = false;

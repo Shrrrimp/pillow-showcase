@@ -10,5 +10,6 @@
             <a href="/detail/{{ pillow.id }}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)">{{ pillow.pillowName }}</a>
         </h4>
         <p class="price">${{ pillow.price }}</p>
+        <button [ngClass]="{none: !authService.isAdmin()}">More...</button>
     </div>
 </div>

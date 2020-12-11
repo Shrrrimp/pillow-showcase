@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
@@ -11,7 +12,7 @@ export class AuthService {
   public loginUrl = environment.loginUrl;
   public token: String;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
 
   }
 
@@ -28,5 +29,9 @@ export class AuthService {
 
   public logOut() {
     localStorage.removeItem('token');
+  }
+
+  public isAdmin() {
+    return this.router.url.indexOf('/admin') !== -1;
   }
 }

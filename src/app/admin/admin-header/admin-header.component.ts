@@ -16,7 +16,6 @@ export class AdminHeaderComponent implements OnInit {
 
   logOut(): void {
     this.authService.logOut();
-    this.router.navigate(['/login']);
   }
 
 }

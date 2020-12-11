@@ -29,6 +29,11 @@ export class AuthService {
 
   public logOut() {
     localStorage.removeItem('token');
+    this.router.navigate(['/login']);
+  }
+
+  public getToken() {
+    return JSON.parse(localStorage.getItem('token')).token;
   }
 
   public isAdmin() {

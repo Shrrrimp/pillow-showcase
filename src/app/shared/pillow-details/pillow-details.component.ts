@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PillowService } from 'src/app/shared/services/pillow.service';
 import { Pillow } from 'src/app/shared/models/pillow.model';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
@@ -18,7 +18,8 @@ export class PillowDetailsComponent implements OnInit {
 
   constructor(public pillowService: PillowService,
     public route: ActivatedRoute,
-    public authService: AuthService) { }
+    public authService: AuthService,
+    private router: Router) { }
 
   ngOnInit(): void {
     let id: string;
@@ -29,6 +30,19 @@ export class PillowDetailsComponent implements OnInit {
       this.imgUrl = this.baseUrl + '/img/' + this.pillow.fileName;
       //TODO добавить переход на страницу ошибки, если объекта нет
     }, err => console.error(err));
+  }
+
+  editPillow(): void { }
+
+  deletePillow(): void {
+    this.pillowService.deletePillow(this.pillow.id).subscribe(() => {
+      this.pillowService.pillowsList = this.pillowService.pillowsList.filter(pillow => pillow.id !== this.pillow.id);
+      this.router.navigate(['/admin']);
+    }, err => {
+      if (err.error.status == 403) {
+        this.authService.logOut();
+      }
+    });
   }
 
 }

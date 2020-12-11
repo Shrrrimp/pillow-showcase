@@ -8,7 +8,6 @@ import { Pillow } from 'src/app/shared/models/pillow.model';
   styleUrls: ['./pillow-list.component.scss']
 })
 export class PillowListComponent implements OnInit {
-  public pillowsList: Pillow[];
 
   constructor(public pillowService: PillowService) { }
 
@@ -16,7 +15,7 @@ export class PillowListComponent implements OnInit {
     this.pillowService.getPillowsList().subscribe((data) => {
       console.log('data:');
       console.log(data);
-      this.pillowsList = data;
+      this.pillowService.pillowsList = data;
     }, err => console.error(err));
   }
 

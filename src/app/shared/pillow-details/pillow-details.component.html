@@ -14,8 +14,8 @@
             </ul>
 
             <div *ngIf="authService.isAdmin()" class="buttons">
-                <button class="edit">Edit</button>
-                <button class="delete">Delete</button>
+                <button class="edit" (click)="editPillow()">Edit</button>
+                <button class="delete" (click)="deletePillow()">Delete</button>
             </div>
         </div>
     </div>

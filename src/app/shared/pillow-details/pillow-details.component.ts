@@ -32,7 +32,9 @@ export class PillowDetailsComponent implements OnInit {
     }, err => console.error(err));
   }
 
-  editPillow(): void { }
+  editPillow(): void {
+    this.router.navigate([`admin/detail/edit/${this.pillow.id}`]);
+  }
 
   deletePillow(): void {
     this.pillowService.deletePillow(this.pillow.id).subscribe(() => {

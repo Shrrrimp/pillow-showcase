@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { DetailsComponent } from './core/pages/details/details.component';
 import { AuthGuard } from './admin/guards/auth.guard';
 import { AdminDetailComponent } from './admin/pages/admin-detail/admin-detail.component';
+import { EditPillowComponent } from './admin/pages/edit-pillow/edit-pillow.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { path: 'admin/detail/:id', component: AdminDetailComponent },
+  { path: 'admin/detail/edit/:id', component: EditPillowComponent },
 ];
 
 @NgModule({

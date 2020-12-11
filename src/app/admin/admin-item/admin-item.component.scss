@@ -58,6 +58,13 @@
 
   .edit {
     border-color: rgb(57, 133, 42);
+    background-color: #39852a;
+    color: #fff;
+  }
+
+  .edit:hover {
+    background-color: #295f1e;
+    border-color: #295f1e;
   }
 
   .delete {

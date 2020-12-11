@@ -15,12 +15,14 @@ export class PillowComponent implements OnInit {
   public isDscrVisible: Boolean;
   public baseUrl = environment.apiUrl;
   public imgUrl: String;
+  public detailUrl: String;
 
   constructor(public router: Router, public authService: AuthService) { }
 
   ngOnInit(): void {
     this.isDscrVisible = false;
     this.imgUrl = this.baseUrl + '/img/' + this.pillow.fileName;
+    this.detailUrl = this.authService.isAdmin() ? `admin/detail/${this.pillow.id}` : `detail/${this.pillow.id}`;
   }
 
   toggleDescription(bool): void {
@@ -28,7 +30,11 @@ export class PillowComponent implements OnInit {
   }
 
   public goToDetailedPage(): void {
-    this.router.navigate(['detail', this.pillow.id]);
+    if (this.authService.isAdmin()) {
+      this.router.navigate(['admin/detail', this.pillow.id]);
+    } else {
+      this.router.navigate(['detail', this.pillow.id]);
+    }
   }
 
 }

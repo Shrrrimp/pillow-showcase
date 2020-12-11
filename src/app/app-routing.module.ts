@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DetailsComponent } from './core/pages/details/details.component';
 import { AuthGuard } from './admin/guards/auth.guard';
+import { AdminDetailComponent } from './admin/pages/admin-detail/admin-detail.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -16,6 +17,7 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     canActivate: [AuthGuard]
   },
+  { path: 'admin/detail/:id', component: AdminDetailComponent },
 ];
 
 @NgModule({

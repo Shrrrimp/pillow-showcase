@@ -7,9 +7,9 @@
     </div>
     <div class="title">
         <h4>
-            <a href="/detail/{{ pillow.id }}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)">{{ pillow.pillowName }}</a>
+            <a href="{{ detailUrl}}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)">{{ pillow.pillowName }}</a>
         </h4>
         <p class="price">${{ pillow.price }}</p>
-        <button [ngClass]="{none: !authService.isAdmin()}">More...</button>
+        <button [ngClass]="{none: !authService.isAdmin()}" (click)="goToDetailedPage()">More...</button>
     </div>
 </div>

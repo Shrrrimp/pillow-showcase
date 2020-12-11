@@ -1,24 +1,3 @@
 <app-header></app-header>
-<div *ngIf="pillow" class="container">
-    <div class="common">
-        <div class="img">
-            <img src="{{ imgUrl }}">
-        </div>
-        <div class="characteristics">
-            <h3>{{ pillow.pillowName }}</h3>
-            <h2>${{ pillow.price }}</h2>
-            <ul>
-                <li *ngIf="pillow.cloth"><span>Cloth:</span>{{ pillow.cloth }}</li>
-                <li *ngIf="pillow.fabricStructure"><span>Fabric structure:</span>{{ pillow.fabricStructure }}</li>
-                <li *ngIf="pillow.filler"><span>Filler:</span>{{ pillow.filler }}</li>
-                <li *ngIf="pillow.size"><span>Size:</span>{{ pillow.size }}</li>
-            </ul>
-        </div>
-    </div>
-    <div class="dscrpt">
-        <h4>Description</h4>
-        <p>{{ pillow.description }}</p>
-    </div>
-</div>
-
+<app-pillow-details></app-pillow-details>
 <app-footer></app-footer>

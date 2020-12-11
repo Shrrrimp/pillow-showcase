@@ -3,6 +3,7 @@ import { PillowService } from 'src/app/shared/services/pillow.service';
 import { Pillow } from 'src/app/shared/models/pillow.model';
 import { ActivatedRoute } from '@angular/router';
 import { environment } from 'src/environments/environment';
+import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
   selector: 'app-pillow-details',
@@ -16,7 +17,8 @@ export class PillowDetailsComponent implements OnInit {
   public imgUrl: String;
 
   constructor(public pillowService: PillowService,
-    public route: ActivatedRoute) { }
+    public route: ActivatedRoute,
+    public authService: AuthService) { }
 
   ngOnInit(): void {
     let id: string;

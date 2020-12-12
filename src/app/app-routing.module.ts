@@ -4,6 +4,7 @@ import { DetailsComponent } from './core/pages/details/details.component';
 import { AuthGuard } from './admin/guards/auth.guard';
 import { AdminDetailComponent } from './admin/pages/admin-detail/admin-detail.component';
 import { EditPillowComponent } from './admin/pages/edit-pillow/edit-pillow.component';
+import { AddPillowComponent } from './admin/pages/add-pillow/add-pillow.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,6 +19,7 @@ const routes: Routes = [
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule),
     canActivate: [AuthGuard]
   },
+  { path: 'admin/add', component: AddPillowComponent },
   { path: 'admin/detail/:id', component: AdminDetailComponent },
   { path: 'admin/detail/edit/:id', component: EditPillowComponent },
 ];

@@ -1,5 +1,5 @@
 export interface Pillow {
-    id: number;
+    id?: number;
     pillowName: string;
     description: string;
     cloth: string;

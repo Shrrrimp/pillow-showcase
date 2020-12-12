@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpRequest } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Pillow } from 'src/app/shared/models/pillow.model';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -27,4 +27,10 @@ export class PillowService {
     const headers = new HttpHeaders({ 'authorization': `Bearer ${this.authService.getToken()}` });
     return this.http.delete(`${this.baseUrl}/${id}`, { headers: headers });
   }
+
+  updatePillow(fd: FormData, id: number): any {
+    const headers = new HttpHeaders({ 'authorization': `Bearer ${this.authService.getToken()}` });
+    return this.http.put<Pillow>(`${this.baseUrl}/${id}`, fd, { headers: headers });
+  }
+
 }

@@ -1,1 +1,81 @@
-<p>pillow-form works!</p>
+<div *ngIf="pillow" class="pillow-form">
+    <form (ngSubmit)="submit()" [formGroup]="form">
+        <div>
+            <p class="wrong-data" *ngFor="let error of errors">{{ error }}</p>
+        </div>
+
+        <label>
+            <div  class="titles">
+                <p>Pillow name</p> 
+            </div>
+            <input type="text" 
+                   [ngClass]="{required: submitted && pillowName.errors}"
+                   class="text-input"
+                   formControlName="pillowName"
+                   maxlength="255" 
+                   required>
+        </label>
+
+        <label>
+            <div  class="titles">
+                <p>Description</p> 
+            </div>
+            <textarea class="text-input description" [ngClass]="{required: submitted && description.errors}" formControlName="description" required></textarea>
+        </label>
+
+        <label>
+            <div  class="titles">
+                <p>Price</p> 
+            </div>
+            <input type="number" class="text-input price" [ngClass]="{required: submitted && price.errors}" formControlName="price" required>
+        </label>
+
+        <label>
+            <div  class="text">
+                <p>Cloth</p> 
+            </div>
+            <input type="text" class="text-input" formControlName="cloth" maxlength="255">
+        </label>
+        <label>
+            <div  class="titles">
+                <p>Fabric structure</p> 
+            </div>
+            <input type="text" class="text-input" formControlName="fabricStructure" maxlength="255">
+        </label>
+        <label>
+            <div  class="titles">
+                <p>Filler</p> 
+            </div>
+            <input type="text" class="text-input" formControlName="filler" maxlength="255">
+        </label>
+
+        <label>
+            <div  class="titles">
+                <p>Size</p> 
+            </div>
+            <input type="text" class="text-input" formControlName="size" maxlength="255">
+        </label>
+
+        <label class="download-file">
+            <div class="titles">
+                <p class="p-img">Pillow image 
+                    <span *ngIf="fileName" class="img-name">
+                        {{ fileName }}
+                    </span>
+                </p>
+            </div>
+            <div>
+                <span>
+                    <input type="file" style="display: none" (change)="onFileSelected($event)" accept=".png, .jpeg, .bmp, .jpg" #fileInput formControlName="image">
+                    <input type="button" (click)="fileInput.click()" class="img-add-btn" value="Select image">
+           
+                    <input  [ngClass]="{none: !fileName}" type="button" (click)="deleteImg()" class="img-add-btn"  id="delete" value="&times;">
+                </span>
+            </div>
+        </label>
+
+        <img *ngIf="imgUrl" [src]="imgUrl">
+
+        <button class="pillow-form-btn" type="submit">Submit</button>
+    </form>
+</div>

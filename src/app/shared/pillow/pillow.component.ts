@@ -16,6 +16,7 @@ export class PillowComponent implements OnInit {
   public baseUrl = environment.apiUrl;
   public imgUrl: String;
   public detailUrl: String;
+  public shortDescription: string;
 
   constructor(public router: Router, public authService: AuthService) { }
 
@@ -23,6 +24,10 @@ export class PillowComponent implements OnInit {
     this.isDscrVisible = false;
     this.imgUrl = this.baseUrl + '/img/' + this.pillow.fileName;
     this.detailUrl = this.authService.isAdmin() ? `admin/detail/${this.pillow.id}` : `detail/${this.pillow.id}`;
+    this.shortDescription = `${this.pillow.description.substr(0, 130)}...`;
+
+    console.log(this.pillow.description);
+    console.log(this.pillow.description.length);
   }
 
   toggleDescription(bool): void {

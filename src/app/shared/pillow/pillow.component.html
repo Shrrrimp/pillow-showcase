@@ -2,7 +2,7 @@
     <div class="image">
         <img src="{{ imgUrl }}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)" (click)="goToDetailedPage()">
         <div class="description" id="description" [ngClass]="{'description-hover': isDscrVisible}">
-            <p>{{ pillow.description }}</p>
+            <p>{{ shortDescription }}</p>
         </div>
     </div>
     <div class="title">
@@ -10,6 +10,9 @@
             <a href="{{ detailUrl}}" (mouseenter)="toggleDescription(true)" (mouseleave)="toggleDescription(false)">{{ pillow.pillowName }}</a>
         </h4>
         <p class="price">${{ pillow.price }}</p>
+        <div class="description-mobile">
+            <p>{{ shortDescription }}</p>
+        </div>
         <button [ngClass]="{none: !authService.isAdmin()}" (click)="goToDetailedPage()">More...</button>
     </div>
 </div>

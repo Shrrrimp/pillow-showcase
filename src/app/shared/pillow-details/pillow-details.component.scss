@@ -104,3 +104,41 @@
     margin-left: 2rem;
   }
 }
+
+@media (max-width: 1000px) {
+  .container {
+    margin: 80px 10%;
+  }
+}
+
+@media (max-width: 760px) {
+  .common {
+    grid-column-gap: 5rem;
+  }
+
+  .characteristics {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .common {
+    grid-template-columns: 1fr;
+
+    .img img {
+      width: 100%;
+      max-width: 380px;
+    }
+  }
+
+  .characteristics {
+    margin-left: 20px;
+  }
+
+}
+
+@media (max-width: 400px) {
+  .container {
+    margin: 80px 20px;
+  }
+}

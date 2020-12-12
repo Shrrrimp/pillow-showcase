@@ -128,23 +128,34 @@ export class PillowFormComponent implements OnInit {
       fd.append('file', this.selectedFile, this.selectedFile.name);
     }
 
-    this.pillowService.updatePillow(fd, this.id).subscribe((data) => {
-      console.log('updated:');
-      console.log(data);
-      this.router.navigate(['/admin']);
-    }, (err) => {
-      this.errors = [];
-      console.log(err);
-      // if (err.error.status || null == 403) {
-      //   this.authService.logOut();
-      // }
+    if (this.id) {
+      this.pillowService.updatePillow(fd, this.id).subscribe((data) => {
+        this.router.navigate(['/admin']);
+      }, (err) => {
+        this.errors = [];
+        console.log(err);
+        if (err.error) {
+          if (err.error.status == 403) {
+            this.authService.logOut();
+          }
+        }
+      });
 
-      // for (let key in err.error.errors) {
-      //   this.errors.push(err.error.errors[key]);
-      // }
-    });
+    } else {
+      this.pillowService.createPillow(fd).subscribe((data) => {
+        this.router.navigate(['/admin']);
+      }, (err) => {
+        this.errors = [];
+        console.log(err);
+        if (err.error) {
+          if (err.error.status == 403) {
+            this.authService.logOut();
+          }
+        }
+      });
+    }
 
   }
 
-
 }
+

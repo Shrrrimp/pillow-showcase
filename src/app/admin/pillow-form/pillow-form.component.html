@@ -1,9 +1,5 @@
 <div *ngIf="pillow" class="pillow-form">
     <form (ngSubmit)="submit()" [formGroup]="form">
-        <div>
-            <p class="wrong-data" *ngFor="let error of errors">{{ error }}</p>
-        </div>
-
         <label>
             <div  class="titles">
                 <p>Pillow name</p> 

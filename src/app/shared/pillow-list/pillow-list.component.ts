@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { PillowService } from '../services/pillow.service';
-import { Pillow } from '../models/pillow.model';
+import { PillowService } from 'src/app/shared/services/pillow.service';
+import { Pillow } from 'src/app/shared/models/pillow.model';
 
 @Component({
   selector: 'app-pillow-list',
@@ -8,15 +8,12 @@ import { Pillow } from '../models/pillow.model';
   styleUrls: ['./pillow-list.component.scss']
 })
 export class PillowListComponent implements OnInit {
-  public pillowsList: Pillow[];
 
   constructor(public pillowService: PillowService) { }
 
   ngOnInit(): void {
     this.pillowService.getPillowsList().subscribe((data) => {
-      console.log('data:');
-      console.log(data);
-      this.pillowsList = data;
+      this.pillowService.pillowsList = data;
     }, err => console.error(err));
   }
 

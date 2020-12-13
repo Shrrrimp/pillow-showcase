@@ -1,0 +1,35 @@
+.container {
+  margin-top: 9rem;
+}
+
+img {
+  right: 386px;
+  position: absolute;
+}
+
+.text {
+  margin: 0 auto;
+  text-align: center;
+  width: 35rem;
+  border: 2px solid;
+  padding: 40px;
+  height: 158px;
+
+  h1 {
+    font-size: 70px;
+  }
+
+  .link {
+    margin-top: 20px;
+  }
+
+  a {
+    margin-top: 20px;
+    color: #222;
+  }
+
+  a:hover {
+    color: #c6a5a5;
+  }
+
+}

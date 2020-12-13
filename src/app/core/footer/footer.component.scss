@@ -59,11 +59,39 @@ footer {
 }
 
 .copyright {
-  padding: 40px 0;
+  padding: 20px 0;
   background-color: #c6a5a5;
 
   p {
     color: #fff;
     text-align: center;
+  }
+}
+
+@media (max-width: 970px) {
+  .info {
+    padding: 90px 60px;
+  }
+}
+
+@media (max-width: 700px) {
+  .info {
+    padding: 40px 20px;
+  }
+}
+
+@media (max-width: 510px) {
+  .links {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .info {
+    flex-direction: column;
+  }
+
+  .mission {
+    margin-bottom: 40px;
   }
 }

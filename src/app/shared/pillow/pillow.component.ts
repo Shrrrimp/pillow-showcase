@@ -23,9 +23,10 @@ export class PillowComponent implements OnInit {
   ngOnInit(): void {
     this.isDscrVisible = false;
     this.imgUrl = this.baseUrl + '/img/' + this.pillow.fileName;
-    this.detailUrl = this.authService.isAdmin() ? `admin/detail/${this.pillow.id}` : `detail/${this.pillow.id}`;
+    this.detailUrl = this.authService.isAdmin() ? `admin/detail/${this.pillow.id}` : `home/detail/${this.pillow.id}`;
     this.shortDescription = `${this.pillow.description.substr(0, 130)}...`;
 
+    //TODO: short description
     console.log(this.pillow.description);
     console.log(this.pillow.description.length);
   }
@@ -38,7 +39,7 @@ export class PillowComponent implements OnInit {
     if (this.authService.isAdmin()) {
       this.router.navigate(['admin/detail', this.pillow.id]);
     } else {
-      this.router.navigate(['detail', this.pillow.id]);
+      this.router.navigate(['home/detail', this.pillow.id]);
     }
   }
 

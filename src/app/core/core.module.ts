@@ -6,11 +6,12 @@ import { MainPageComponent } from './pages/main-page/main-page.component';
 import { FooterComponent } from './footer/footer.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, MainPageComponent, FooterComponent, DetailsComponent],
+  declarations: [HeaderComponent, MainPageComponent, FooterComponent, DetailsComponent, ContactComponent],
   imports: [
     CommonModule,
     SharedModule,

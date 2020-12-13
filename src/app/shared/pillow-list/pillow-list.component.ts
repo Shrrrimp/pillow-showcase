@@ -13,8 +13,6 @@ export class PillowListComponent implements OnInit {
 
   ngOnInit(): void {
     this.pillowService.getPillowsList().subscribe((data) => {
-      console.log('data:');
-      console.log(data);
       this.pillowService.pillowsList = data;
     }, err => console.error(err));
   }

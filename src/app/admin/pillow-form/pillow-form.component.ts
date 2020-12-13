@@ -69,10 +69,10 @@ export class PillowFormComponent implements OnInit {
         pillowName: '',
         shortDscrpt: '',
         description: '',
-        cloth: '',
-        fabricStructure: '',
-        filler: '',
-        size: '',
+        cloth: null,
+        fabricStructure: null,
+        filler: null,
+        size: null,
         price: null,
         fileName: null
       };

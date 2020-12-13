@@ -53,6 +53,7 @@ export class PillowFormComponent implements OnInit {
         }
 
         this.pillowName.setValue(this.pillow.pillowName || null);
+        this.shortDscrpt.setValue(this.pillow.shortDscrpt || null);
         this.cloth.setValue(this.pillow.cloth || null);
         this.fabricStructure.setValue(this.pillow.fabricStructure || null);
         this.filler.setValue(this.pillow.filler || null);

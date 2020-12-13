@@ -31,6 +31,7 @@ export class PillowFormComponent implements OnInit {
   ngOnInit(): void {
     this.form = new FormGroup({
       pillowName: new FormControl('', Validators.required),
+      shortDscrpt: new FormControl('', Validators.required),
       cloth: new FormControl(''),
       fabricStructure: new FormControl(''),
       filler: new FormControl(''),
@@ -63,6 +64,7 @@ export class PillowFormComponent implements OnInit {
     } else {
       this.pillow = {
         pillowName: '',
+        shortDscrpt: '',
         description: '',
         cloth: '',
         fabricStructure: '',
@@ -76,6 +78,8 @@ export class PillowFormComponent implements OnInit {
   }
 
   get pillowName() { return this.form.get('pillowName'); }
+
+  get shortDscrpt() { return this.form.get('shortDscrpt'); }
 
   get cloth() { return this.form.get('cloth'); }
 
@@ -117,6 +121,7 @@ export class PillowFormComponent implements OnInit {
     const fd = new FormData();
 
     fd.append('pillowName', this.pillowName.value);
+    fd.append('shortDscrpt', this.shortDscrpt.value);
     fd.append('description', this.description.value);
     fd.append('cloth', this.cloth.value);
     fd.append('fabricStructure', this.fabricStructure.value);

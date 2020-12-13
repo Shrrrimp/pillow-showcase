@@ -24,11 +24,6 @@ export class PillowComponent implements OnInit {
     this.isDscrVisible = false;
     this.imgUrl = this.baseUrl + '/img/' + this.pillow.fileName;
     this.detailUrl = this.authService.isAdmin() ? `admin/detail/${this.pillow.id}` : `home/detail/${this.pillow.id}`;
-    // this.shortDescription = `${this.pillow.description.substr(0, 130)}...`;
-
-    //TODO: short description
-    // console.log(this.pillow.description);
-    // console.log(this.pillow.description.length);
   }
 
   toggleDescription(bool): void {

@@ -28,8 +28,10 @@ export class PillowDetailsComponent implements OnInit {
     this.pillowService.getPillow(id).subscribe((data) => {
       this.pillow = data;
       this.imgUrl = this.baseUrl + '/img/' + this.pillow.fileName;
-      //TODO добавить переход на страницу ошибки, если объекта нет
-    }, err => console.error(err));
+    }, err => {
+      console.error(err)
+      this.router.navigate(['**']);
+    });
   }
 
   editPillow(): void {

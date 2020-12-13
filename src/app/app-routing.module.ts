@@ -6,6 +6,7 @@ import { AdminDetailComponent } from './admin/pages/admin-detail/admin-detail.co
 import { EditPillowComponent } from './admin/pages/edit-pillow/edit-pillow.component';
 import { AddPillowComponent } from './admin/pages/add-pillow/add-pillow.component';
 import { ContactComponent } from './core/pages/contact/contact.component';
+import { ErrorPageComponent } from './core/pages/error-page/error-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'admin/add', component: AddPillowComponent },
   { path: 'admin/detail/:id', component: AdminDetailComponent },
   { path: 'admin/detail/edit/:id', component: EditPillowComponent },
+  { path: '**', component: ErrorPageComponent }
 ];
 
 @NgModule({

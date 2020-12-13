@@ -45,7 +45,6 @@ export class PillowFormComponent implements OnInit {
 
     if (this.id) {
       this.pillowService.getPillow(this.id.toString()).subscribe((data) => {
-        //TODO добавить переход на страницу ошибки, если объекта нет
         this.pillow = data;
 
         if (this.pillow.fileName) {
@@ -60,7 +59,10 @@ export class PillowFormComponent implements OnInit {
         this.size.setValue(this.pillow.size || null);
         this.price.setValue(this.pillow.price || null);
         this.description.setValue(this.pillow.description || null);
-      }, err => console.error(err));
+      }, err => {
+        console.error(err);
+        this.router.navigate(['**']);
+      });
     } else {
       this.pillow = {
         pillowName: '',

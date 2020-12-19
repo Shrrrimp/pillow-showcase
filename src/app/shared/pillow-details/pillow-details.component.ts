@@ -40,11 +40,12 @@ export class PillowDetailsComponent implements OnInit {
 
   deletePillow(): void {
     this.pillowService.deletePillow(this.pillow.id).subscribe(() => {
-      this.pillowService.pillowsList = this.pillowService.pillowsList.filter(pillow => pillow.id !== this.pillow.id);
       this.router.navigate(['/admin']);
     }, err => {
-      if (err.error.status == 403) {
-        this.authService.logOut();
+      if (err.error) {
+        if (err.error.status == 403) {
+          this.authService.logOut();
+        }
       }
     });
   }
